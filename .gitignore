@@ -19,6 +19,5 @@ bin/
 *.out
 *.out.*
 .idea
-data/
 build-*
 *.DS_Store*

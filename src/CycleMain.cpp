@@ -171,7 +171,7 @@ int main(int argc, char** argv) {
         cout << "Total time: " << total << " s" << endl;
         cout << "Vertex visits: " << vertexVisits.getResult() << endl;
         if (printResult) {
-            cout << "# cycle_size, num_of_elems\n";
+            cout << "# cycle_size, num_of_cycles\n";
             unsigned long totCycles = 0;
             for (auto hist : resultHistogram) { cout << hist.first << ", " << hist.second << "\n"; totCycles += hist.second; }
             cout << "Total, " << totCycles << endl;

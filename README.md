@@ -28,7 +28,7 @@ cmake .. -DCMAKE_C_COMPILER=`which mpicc` -DCMAKE_CXX_COMPILER=`which mpicxx`
 make
 ```
 
-Otherwise, comment out `MPI_IMPL` macro from `include/Macros.h` file and use:
+To run it on multiple nodes, comment out `MPI_IMPL` macro from `include/Macros.h` file and use:
 ```
 mkdir build
 cd build
@@ -38,7 +38,7 @@ make
 
 ### Executing
 
-To run our code on a single machnine, simply execute:
+To run our code on a single node, simply execute:
 ```
 ./cycle -f <graph_path> -algo <algo> -tw <time-window> -n <num-of-threads>
 ```
@@ -53,8 +53,8 @@ Optionally, for better performance, interleave the memory across different NUMA 
 numactl -i all ./cycle <cmd-arguments>
 ```
 
-When running the code using `mpicc` on multiple processors, make sure to have a copy of the input graph in the same path across all processors.
-Also, the path to `tbb` and the path to the executable should be the same across all processors.
+When running the code using `mpicc` on multiple processors, make sure to have a copy of the input graph in the same path across all nodes.
+Also, the path to `tbb` and the path to the executable should be the same across all nodes.
 
 The exact algorithms supported and the description of the command line arguments can be printed using `./cycle -h`: 
 ```
@@ -81,3 +81,36 @@ The exact algorithms supported and the description of the command line arguments
 ```
 
 The file containing the input temporal graph contains the list of edges, one edge per line. Each edge is represented with the identifiers of the two vertices that it connects and a timestamp.
+Values in each line are separated by space.
+
+The sample input graph given in `data/sample.txt`:
+
+```
+1 2 0
+1 5 1
+2 3 2
+3 1 3
+3 2 4
+3 4 5
+3 6 6
+4 5 7
+5 2 8
+6 4 9
+4 7 10
+```
+
+An example of running our code:
+
+```
+numactl -i all ./cycle -f ../data/sample.txt -algo 0 -n 16 -tw 1
+```
+
+which outputs the following cycle histogram:
+```
+# cycle_size, num_of_cycles
+2, 1
+3, 1
+4, 2
+5, 1
+Total, 5
+```
