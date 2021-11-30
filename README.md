@@ -54,6 +54,7 @@ numactl -i all ./cycle <cmd-arguments>
 ```
 
 When running the code using `mpicc` on multiple processors, make sure to have a copy of the input graph in the same path across all processors.
+Also, the path to `tbb` and the path to the executable should be the same across all processors.
 
 The exact algorithms supported and the description of the command line arguments can be printed using `./cycle -h`: 
 ```
