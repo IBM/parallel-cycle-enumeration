@@ -7,8 +7,6 @@ The contact email address: jov@zurich.ibm.com
 ### Building
 
 Prerequisites for building our code:
-
-Compiler: 
 - GCC version 7 or higher
 - MPICC compiler
 - Intel Threading Building Blocks 2020 Update 2, available here: https://github.com/oneapi-src/oneTBB/releases/tag/v2020.2
