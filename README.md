@@ -26,7 +26,7 @@ cmake .. -DCMAKE_C_COMPILER=`which mpicc` -DCMAKE_CXX_COMPILER=`which mpicxx`
 make
 ```
 
-To run it on multiple nodes, comment out `MPI_IMPL` macro from `include/Macros.h` file and use:
+To run it on a single node, comment out `MPI_IMPL` macro from `include/Macros.h` file and use:
 ```
 mkdir build
 cd build
@@ -40,7 +40,7 @@ To run our code on a single node, simply execute:
 ```
 ./cycle -f <graph_path> -algo <algo> -tw <time-window> -n <num-of-threads>
 ```
-Or using `mpirun`:
+Or on multiple nodes using `mpirun`:
 
 ```
 mpirun -np <num-of-processes> --ppn 1 -hosts <list-of-hosts> ./cycle -f <graph_path> -algo <algo> -tw <time-window> -n <num-of-threads>
