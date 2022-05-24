@@ -1,6 +1,6 @@
-# parallel_cycle_enumeration
+# parallel-cycle-enumeration
 
-Source code for parallel enumeration of simple and temporal cycles.
+Source code for parallel enumeration of simple and temporal cycles https://arxiv.org/pdf/2202.09685.pdf.
 
 The contact email address: jov@zurich.ibm.com
 
