@@ -1,6 +1,8 @@
 # parallel-cycle-enumeration
 
-Source code for parallel enumeration of simple and temporal cycles https://arxiv.org/pdf/2202.09685.pdf.
+This is the source code for the ACM SPAA 2022 paper titled "Scalable Fine-Grained Parallel Cycle Enumeration Algorithms": https://doi.org/10.1145/3490148.3538585.
+
+This project is a collaborative effort between IBM Research Europe - Zurich and EPFL, partly funded by SNSF (http://p3.snf.ch/Project-172610)
 
 The contact email address: jov@zurich.ibm.com
 
